@@ -148,6 +148,7 @@ public class NetworkManager {
         }
     }
 
+
     public static void updateInitialViews(View view) {
         if (view != null) {
 
@@ -155,30 +156,6 @@ public class NetworkManager {
 
             if (activity== null)
                 return;
-
-            if (activity.getIntent() != null) {
-                if (activity.getIntent().getExtras() != null && activity.getIntent().hasExtra(ConfigurationHelper.ConfigurationEntry.UserCode.getKeyName())) {
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserCode, activity.getIntent().getExtras().getInt(ConfigurationHelper.ConfigurationEntry.UserCode.getKeyName(), -1));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserName, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserName.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserCodeFilial, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserCodeFilial.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserNameFilial, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserNameFilial.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserCodeProfile, activity.getIntent().getExtras().getInt(ConfigurationHelper.ConfigurationEntry.UserCodeProfile.getKeyName(), -1));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserNameProfile, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserNameProfile.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserLeader, activity.getIntent().getExtras().getInt(ConfigurationHelper.ConfigurationEntry.UserLeader.getKeyName(), -1));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserLogin, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserLogin.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.IsLoggedIn, activity.getIntent().getExtras().getBoolean(ConfigurationHelper.ConfigurationEntry.IsLoggedIn.getKeyName(), false));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.PackageName, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.PackageName.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.MacAddress, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.MacAddress.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.Token, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.Token.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.RefreshToken, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.RefreshToken.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.UserPassword, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.UserPassword.getKeyName(), ""));
-
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.ServerAddress, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.ServerAddress.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.ServerAddressApi, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.ServerAddressApi.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.Directory, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.Directory.getKeyName(), ""));
-                    ConfigurationHelper.savePreference(ConfigurationHelper.ConfigurationEntry.Store, activity.getIntent().getExtras().getString(ConfigurationHelper.ConfigurationEntry.Store.getKeyName(), ""));
-                }
-            }
 
 
             String profile = ConfigurationHelper.loadPreference(ConfigurationHelper.ConfigurationEntry.UserNameProfile, "-");
